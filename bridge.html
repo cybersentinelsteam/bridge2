@@ -1,0 +1,1394 @@
+
+
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBERBRIDGE - Kiber Təhlükəsizlik və Süni İntellekt Təlim Proqramı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2563eb;
+            --secondary-blue: #3b82f6;
+            --light-blue: #60a5fa;
+            --accent-blue: #1d4ed8;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --gray: #64748b;
+            --dark-gray: #334155;
+            --text-dark: #1e293b;
+            --gradient-blue: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animated Wave Background - Global */
+        .wave-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                transparent, 
+                rgba(37, 99, 235, 0.08), 
+                rgba(59, 130, 246, 0.12), 
+                rgba(96, 165, 250, 0.08), 
+                transparent,
+                rgba(29, 78, 216, 0.06),
+                transparent);
+            animation: waveMove 15s ease-in-out infinite;
+        }
+
+        .wave:nth-child(1) {
+            animation-delay: 0s;
+            animation-duration: 15s;
+            background: linear-gradient(45deg, 
+                transparent, 
+                rgba(37, 99, 235, 0.1), 
+                rgba(59, 130, 246, 0.15), 
+                rgba(96, 165, 250, 0.1), 
+                transparent);
+        }
+
+        .wave:nth-child(2) {
+            animation-delay: -5s;
+            animation-duration: 20s;
+            background: linear-gradient(-45deg, 
+                transparent, 
+                rgba(59, 130, 246, 0.06), 
+                rgba(96, 165, 250, 0.12), 
+                rgba(37, 99, 235, 0.08), 
+                transparent,
+                rgba(29, 78, 216, 0.04),
+                transparent);
+        }
+
+        .wave:nth-child(3) {
+            animation-delay: -10s;
+            animation-duration: 25s;
+            background: linear-gradient(135deg, 
+                transparent, 
+                rgba(96, 165, 250, 0.05), 
+                rgba(37, 99, 235, 0.09), 
+                rgba(59, 130, 246, 0.07), 
+                transparent,
+                rgba(29, 78, 216, 0.03),
+                transparent);
+        }
+
+        .wave:nth-child(4) {
+            animation-delay: -15s;
+            animation-duration: 30s;
+            background: radial-gradient(ellipse at center, 
+                rgba(37, 99, 235, 0.04), 
+                rgba(59, 130, 246, 0.08), 
+                rgba(96, 165, 250, 0.06), 
+                transparent);
+        }
+
+        @keyframes waveMove {
+            0%, 100% {
+                transform: translateX(-60%) translateY(0px) rotate(0deg) scale(1);
+            }
+            20% {
+                transform: translateX(-40%) translateY(-30px) rotate(2deg) scale(1.1);
+            }
+            40% {
+                transform: translateX(-10%) translateY(15px) rotate(-1deg) scale(0.9);
+            }
+            60% {
+                transform: translateX(20%) translateY(-25px) rotate(1.5deg) scale(1.05);
+            }
+            80% {
+                transform: translateX(40%) translateY(20px) rotate(-0.5deg) scale(0.95);
+            }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 30px rgba(37, 99, 235, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-blue);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 28px;
+            height: 3px;
+            background: var(--primary-blue);
+            margin: 4px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 0 4rem;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1000px;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-blue);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            border: 2px solid rgba(37, 99, 235, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.2s forwards;
+        }
+
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease 0.4s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            color: var(--dark-gray);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.8s forwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gradient-blue);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 1s forwards;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Sections */
+        .section {
+            padding: 8rem 0;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        .about-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--dark-gray);
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+            text-align: left;
+        }
+
+        .about-content p {
+            margin-bottom: 2.5rem;
+        }
+
+        .about-content strong {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .importance-section {
+            background: rgba(37, 99, 235, 0.05);
+            border-radius: 25px;
+            padding: 4rem;
+            margin: 4rem 0;
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        .importance-section h3 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .importance-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .importance-list li {
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 3rem;
+            line-height: 1.7;
+        }
+
+        .importance-list li::before {
+            content: '🎯';
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+        }
+
+        /* Program Section */
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 25px;
+            padding: 4rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(37, 99, 235, 0.1);
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .program-card:hover::before {
+            left: 100%;
+        }
+
+        .program-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 70px rgba(37, 99, 235, 0.2);
+        }
+
+        .program-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+
+        .program-card h3 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--primary-blue);
+        }
+
+        .program-card p {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .program-features {
+            list-style: none;
+            text-align: left;
+        }
+
+        .program-features li {
+            padding: 0.8rem 0;
+            color: var(--dark-gray);
+            position: relative;
+            padding-left: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .program-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+
+
+
+        /* Online Training Section */
+        .online-section {
+            background: var(--light-gray);
+            border-radius: 30px;
+            padding: 6rem 4rem;
+            margin: 6rem 0;
+        }
+
+        .online-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .online-feature {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .online-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .online-feature h4 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .online-feature p {
+            color: var(--gray);
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* Apply Section */
+        .apply-section {
+            background: var(--gradient-blue);
+            color: white;
+            text-align: center;
+            padding: 8rem 4rem;
+            margin: 6rem 0;
+            border-radius: 30px;
+        }
+
+        .apply-section h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .apply-section p {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+
+        .apply-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .apply-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-blue);
+            padding: 1.5rem 4rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-top: 2rem;
+        }
+
+        .apply-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Partners Section */
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            margin: 4rem 0;
+            flex-wrap: wrap;
+        }
+
+        .partner-logo {
+            width: 180px;
+            height: 180px;
+            background: var(--gradient-blue);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.3);
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .partner-logo:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .coming-soon {
+            text-align: center;
+            color: var(--gray);
+            font-style: italic;
+            margin-top: 3rem;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 6rem 0 3rem;
+            margin-top: 6rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--light-blue);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--light-blue);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            background: var(--light-blue);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid #475569;
+            color: #94a3b8;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .program-card {
+                padding: 3rem;
+            }
+
+            .partners-grid {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .mentors-section,
+            .online-section,
+            .apply-section {
+                padding: 4rem 2rem;
+            }
+
+            .importance-section {
+                padding: 3rem 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .cta-button,
+            .apply-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Wave Background -->
+    <div class="wave-background">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">CYBERBRIDGE</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#haqqinda">Haqqında</a></li>
+                <li><a href="#telim">Təlim Proqramı</a></li>
+                <li><a href="#niye">Niyə Biz?</a></li>
+                <li><a href="#muraciet">Müraciət</a></li>
+                <li><a href="#terefdaslar">Tərəfdaşlar</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🚀 Azərbaycanın Ən Geniş Miqyaslı Kiber Təlim Proqramlarından Biri</div>
+            <h1 class="hero-title">CYBERBRIDGE</h1>
+            <p class="hero-subtitle">Cyber Sentinels və Müstəqil İnkişaf Gənclər Təşkilatı əməkdaşlığı ilə</p>
+            <div class="hero-description">
+                <p><strong>🌐 Kiber Təhlükəsizlik və Süni İntellekt üzrə Onlayn Təlim Proqramı</strong></p>
+                <p>📢 Hər ay 20 seçilmiş gənc üçün tamamilə ödənişsiz və onlayn 1 aylıq intensiv təlim!</p>
+            </div>
+            <a href="#muraciet" class="cta-button">İndi Müraciət Et</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section fade-in" id="haqqinda">
+        <h2 class="section-title">Layihə Haqqında</h2>
+        <p class="section-subtitle">Azərbaycanın rəqəmsal təhlükəsizlik sahəsində ilk və ən böyük təlim layihəsi</p>
+        
+        <div class="about-content">
+            <p><strong>CYBERBRIDGE</strong> layihəsi Azərbaycanda kiber təhlükəsizlik və süni intellekt sahələrində peşəkar kadrların hazırlanması məqsədilə yaradılmış ölkəmizin ilk və ən əhatəli onlayn təlim proqramıdır. Bu layihə Cyber Sentinels və Müstəqil İnkişaf Gənclər Təşkilatının birgə təşəbbüsü olaraq həyata keçirilir.</p>
+
+            <p>Layihəmiz <strong>tamamilə onlayn formatda</strong> keçirilir və iştirakçılar öz evlərindən, rahat vaxtlarında təlimlərdə iştirak edə bilərlər. Bütün dərslər <strong>yerli və türk mütəxəssislər</strong> tərəfindən aparılır və iştirakçılara həm nəzəri, həm də praktiki bilik verilir.</p>
+
+            <p>Proqramımız hər ay yalnız <strong>20 ən yaxşı namizədi</strong> seçir və onlara 1 ay ərzində intensiv təlim verir. Bu seçici yanaşma sayəsində hər bir iştirakçıya maksimum diqqət və fərdi yanaşma təmin edilir.</p>
+        </div>
+
+        <div class="importance-section">
+            <h3>🎯 Layihənin Əhəmiyyəti</h3>
+            <ul class="importance-list">
+                <li><strong>Ölkə təhlükəsizliyi:</strong> Azərbaycanın kiber təhlükəsizlik sahəsində mütəxəssis ehtiyacının ödənilməsi</li>
+                <li><strong>Gənclərin inkişafı:</strong> 18-30 yaş arası gənclərin texnologiya sahəsində peşəkar inkişafı</li>
+                <li><strong>Beynəlxalq standartlar:</strong> Dünya səviyyəsində bilik və bacarıqların əldə edilməsi</li>
+                <li><strong>İqtisadi inkişaf:</strong> Ölkəmizin rəqəmsal iqtisadiyyatının gücləndirilməsi</li>
+                <li><strong>Innovasiya mərkəzi:</strong> Azərbaycanın regionda texnologiya lideri kimi mövqeyinin möhkəmləndirilməsi</li>
+                <li><strong>Gələcək investisiyalar:</strong> Beynəlxalq texnologiya şirkətlərinin ölkəmizə marağının artırılması</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Training Program Section -->
+    <section class="section fade-in" id="telim">
+        <h2 class="section-title">Təlim Proqramı</h2>
+        <p class="section-subtitle">İki əsas istiqamətdə hərtərəfli və praktiki onlayn təlim</p>
+        
+        <div class="program-grid">
+            <div class="program-card">
+                <div class="program-icon">🔐</div>
+                <h3>Kiber Təhlükəsizlik</h3>
+                <p>Rəqəmsal dünyada təhlükəsizliyin təmin edilməsi üçün lazım olan bütün bilik və bacarıqları onlayn formatda əldə edin.</p>
+                <ul class="program-features">
+                    <li>Şəbəkə təhlükəsizliği əsasları</li>
+                    <li>Etik hacking və penetrasiya testləri</li>
+                    <li>Kiber hücumların təhlili və qarşısının alınması</li>
+                    <li>Rəqəmsal məhkəmə ekspertizası</li>
+                    <li>Təhlükəsizlik siyasətlərinin hazırlanması</li>
+                    <li>İnsident cavab və bərpa prosedurları</li>
+                    <li>Kriptografiya və məlumat şifrələməsi</li>
+                    <li>Sosial mühəndislik və insan faktoru</li>
+                    <li>Praktiki laboratoriya işləri</li>
+                    <li>Real ssenarilərdə təhlükəsizlik testləri</li>
+                </ul>
+            </div>
+            
+            <div class="program-card">
+                <div class="program-icon">🧠</div>
+                <h3>Süni İntellekt</h3>
+                <p>Gələcəyin texnologiyası olan süni intellekt sahəsində dərin bilik və praktiki təcrübə onlayn formatda qazanın.</p>
+                <ul class="program-features">
+                    <li>Maşın öyrənməsi alqoritmləri</li>
+                    <li>Dərin öyrənmə və neural şəbəkələr</li>
+                    <li>Təbii dil emalı (NLP)</li>
+                    <li>Kompüter görmə və şəkil tanıma</li>
+                    <li>AI model hazırlama və optimallaşdırma</li>
+                    <li>Big Data və məlumat analizi</li>
+                    <li>AI etikası və məsuliyyətli AI</li>
+                    <li>Python və AI kitabxanaları</li>
+                    <li>Real layihələrdə AI tətbiqi</li>
+                    <li>AI sistemlərinin təhlükəsizliyi</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+   <!--Spikerler-->
+  
+
+<section class="speakers-section">
+    <style>
+        .speakers-section {
+            padding: 64px 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .speakers-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .speakers-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 16px;
+        }
+
+        .speakers-subtitle {
+            font-size: 1.125rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            justify-items: center;
+        }
+
+        .speaker-card {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .speaker-image-container {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .speaker-image {
+            width: 192px;
+            height: 192px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .speaker-card:hover .speaker-image {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .speaker-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .speaker-title {
+            color: #4f46e5;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .speaker-description {
+            color: #6b7280;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            max-width: 280px;
+        }
+
+        @media (max-width: 768px) {
+            .speakers-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .speakers-title {
+                font-size: 2rem;
+            }
+            
+            .speaker-image {
+                width: 160px;
+                height: 160px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .speakers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .speakers-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+
+    <div class="speakers-header">
+        <h2 class="speakers-title">Spikerlər</h2>
+        <p class="speakers-subtitle">
+CyberBridge tədbiri zamanı müxtəlif sahələrdən gələn mütəxəssislər öz təcrübələrini paylaşacaq        </p>
+    </div>
+    
+    <div class="speakers-grid">
+        <!-- Spiker 1 -->
+        <div class="speaker-card">
+            <div class="speaker-image-container">
+                <img src="WhatsApp Image 2025-07-17 at 17.08.58.jpeg" 
+                     alt="Spiker 1" 
+                     class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Mutlu Doğuş Yıldırım</h3>
+            <p class="speaker-title">Təsisçi-Seslio Robot</p>
+        </div>
+<div class="speaker-card">
+            <div class="speaker-image-container">
+                <img src="sari-pp (1).png" 
+                     alt="Spiker 4" 
+                     class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Hüseyin Karataş</h3>
+            <p class="speaker-title">Full stack software engineer &Campus ARC -təsisçi </p>
+            
+</div>
+<div class="speaker-card">
+            <div class="speaker-image-container">
+                <img src="517505249_599360179579359_2991540197470628544_n.jpg" 
+                     alt="Spiker 4" 
+                     class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Sadiq Qasımov</h3>
+            <p class="speaker-title">Penetration Tester və Cybersecurity/Red Teaming təlimçisi (ITBrains Academy və Cyber Security Platform) </p>
+            
+</div>
+        <!-- Spiker 2 -->
+        <div class="speaker-card">
+            <div class="speaker-image-container">
+                <img src="Ruslan Xəlilzadə (1).png" 
+                     alt="Spiker 2" 
+                     class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Ruslan Xəlilzadə</h3>
+            <p class="speaker-title">Penetration Tester-KlickOn.tr</p>
+        </div>
+
+        <!-- Spiker 3 -->
+        <div class="speaker-card">
+            <div class="speaker-image-container">
+                <img src="1752846943851.png" 
+                     alt="Spiker 3" 
+                     class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Həsən Şahbazov</h3>
+            <p class="speaker-title">İnformasiya Təhlükəsizliyi üzrə mütəxəssis-AzeRobot.az</p>
+        </div>
+
+        <!-- Spiker 4 -->
+        <div class="speaker-card">
+            <div class="speaker-image-container">
+                <img src="baybars bilim.jpg" 
+                     alt="Spiker 4" 
+                     class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Baybars Bilim</h3>
+            <p class="speaker-title">Agentliyin direktoru-KlickOn.tr</p>
+            
+</div>
+ <div class="speaker-card">
+            <div class="speaker-image-container">
+                <img src="1748593198544.jpeg" 
+                     alt="Spiker 4" 
+                     class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Eric Kifalang</h3>
+            <p class="speaker-title">Togo Respublikası Prezident Aparatı nəzdində fəaliyyət göstərən Milli İdentifikasiya Agentliyində Şəbəkə və Kibertəhlükəsizlik Mühəndisi </p>
+            
+</div>
+<div class="speaker-card">
+            <div class="speaker-image-container">
+                <img src="1752854245522.jpeg" 
+                     alt="Spiker 4" 
+                     class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Yılmaz Değirmenci</h3>
+            <p class="speaker-title">Bilishim Cyber Security and Artificial Intelligence şirkətinin təsisçisi və CEO-su </p>
+            
+</div>
+        <!-- Spiker 5 -->
+        <div class="speaker-card">
+            <div class="speaker-image-container">
+                <img src="Azerqarayev.jpg" 
+                     alt="Spiker 5" 
+                     class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Azər Qarayev</h3>
+            <p class="speaker-title">Mobil Cihazlar Forensikası üzrə Mütəxəssis-iCloud Azerbaijan</p>
+        </div>
+
+        <!-- Spiker 6 -->
+        <div class="speaker-card">
+            <div class="speaker-image-container">
+                <img src="SubhanSerifov.png" 
+                     alt="Spiker 6" 
+                     class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Sübhan Şərifov</h3>
+            <p class="speaker-title">Təşkilatın sədri-Müstəqil İnkişaf Gənclər Təşkilatı</p>
+        </div>
+    </div>
+</section>
+   <!-- Online Training Features -->
+    <section class="online-section fade-in" id="niye">
+        <h2 class="section-title">Onlayn Təlimin Üstünlükləri</h2>
+        <p class="section-subtitle">Niyə CYBERBRIDGE-i seçməlisiniz?</p>
+        
+        <div class="online-features">
+            <div class="online-feature">
+                <div class="online-icon">💻</div>
+                <h4>Tam Onlayn Format</h4>
+                <p>Evinizdən, rahat vaxtınızda, öz tempizdə öyrənin. Heç bir coğrafi məhdudiyyət yoxdur.</p>
+            </div>
+            
+            <div class="online-feature">
+                <div class="online-icon">👥</div>
+                <h4>Fərdi Yanaşma</h4>
+                <p>Hər ay yalnız 20 nəfər seçilir. Bu da hər kəsə maksimum diqqət və fərdi mentorluq deməkdir.</p>
+            </div>
+            
+        
+            
+            <div class="online-feature">
+                <div class="online-icon">⚡</div>
+                <h4>Praktiki Laboratoriyalar</h4>
+                <p>Virtual laboratoriyalarda real ssenarilərlə işləyərək praktiki təcrübə qazanın.</p>
+            </div>
+            
+            <div class="online-feature">
+                <div class="online-icon">🎯</div>
+                <h4>Mentor Dəstəyi</h4>
+                <p>Təlim müddətində və sonrasında mentorlarımızdan davamlı dəstək alın.</p>
+            </div>
+            
+            <div class="online-feature">
+                <div class="online-icon">🌟</div>
+                <h4>Qlobal Şəbəkə</h4>
+                <p>Dünya üzrə mütəxəssislərlə əlaqə qurun və peşəkar şəbəkənizi genişləndirin.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apply Section -->
+    <section class="apply-section fade-in" id="muraciet">
+        <h2>İndi Müraciət Et</h2>
+        <p>CYBERBRIDGE proqramına qoşul və Azərbaycanın kiber təhlükəsizlik sahəsində gələcəyini qur!</p>
+        
+        <div class="apply-stats">
+            <div class="stat-item">
+                <span class="stat-number">20</span>
+                <span class="stat-label">Aylıq Yer Sayı</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1</span>
+                <span class="stat-label">Ay Təlim Müddəti</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Pulsuz Təlim</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24 / 7</span>
+                <span class="stat-label">Mentor Dəstəyi</span>
+            </div>
+        </div>
+        
+        <a href="#" class="apply-button">Müraciət Formu</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>CYBERBRIDGE</h4>
+                <p>Azərbaycanınkiber təhlükəsizlik və süni intellekt təlim proqramı. Gənclərimizin rəqəmsal gələcəyini qurur.</p>
+                <div class="social-links">
+                    <a href="#">📱</a>
+                    <a href="#">💬</a>
+                    <a href="#">📧</a>
+                    <a href="#">🌐</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Əlaqə</h4>
+                <p>📧 info@cyberbridge.space</p>
+                <p>📞 +994 77 363 80 63</p>
+                <p>📍 Bakı, Azərbaycan</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Keçidlər</h4>
+                <p><a href="#haqqinda">Haqqında</a></p>
+                <p><a href="#telim">Təlim Proqramı</a></p>
+                <p><a href="#muraciet">Müraciət</a></p>
+                <p><a href="#terefdaslar">Tərəfdaşlar</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Təlim Sahələri</h4>
+                <p>🔐 Kiber Təhlükəsizlik</p>
+                <p>🧠 Süni İntellekt</p>
+                <p>📊 Data Science</p>
+                <p>⚡ Etik Hacking</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 CYBERBRIDGE. Bütün hüquqlar qorunur. | Cyber Sentinels & Müstəqil İnkişaf Gənclər Təşkilatı</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenu.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add hover effects to cards
+        document.querySelectorAll('.program-card, .mentor-card, .online-feature').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add click animation to buttons
+        document.querySelectorAll('.cta-button, .apply-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.3)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.pointerEvents = 'none';
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = counter.textContent;
+                const isPercentage = target.includes('%');
+                const numericTarget = parseInt(target.replace(/[^\d]/g, ''));
+                let current = 0;
+                const increment = numericTarget / 50;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= numericTarget) {
+                        current = numericTarget;
+                        clearInterval(timer);
+                    }
+                    
+                    if (isPercentage) {
+                        counter.textContent = Math.floor(current) + '%';
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
+                }, 30);
+            });
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.apply-stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'95f82391f746e8f0',t:'MTc1MjU3MDc1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

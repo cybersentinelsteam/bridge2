@@ -827,11 +827,106 @@
             <p class="hero-subtitle">Cyber Sentinels və Müstəqil İnkişaf Gənclər Təşkilatı əməkdaşlığı ilə</p>
             <div class="hero-description">
                 <p><strong>🌐 Kiber Təhlükəsizlik və Süni İntellekt üzrə Onlayn Təlim Proqramı</strong></p>
-                <p>📢 Hər ay 20 seçilmiş gənc üçün tamamilə ödənişsiz və onlayn 1 aylıq intensiv təlim!</p>
             </div>
             <a href="#muraciet" class="cta-button">İndi Müraciət Et</a>
         </div>
     </section>
+<section class="stats-section">
+    <style>
+        .stats-section {
+            padding: 80px 20px;
+            background-color: #f9fafb; /* Açıq boz fon */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            text-align: center;
+        }
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .stats-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 16px;
+        }
+        .stats-subtitle {
+            font-size: 1.125rem;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto 48px;
+            line-height: 1.6;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+        .stat-card {
+            background-color: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #4f46e5;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        /* Responsivlik üçün media sorğuları */
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .stats-title {
+                font-size: 2rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <div class="stats-container">
+        <h2 class="stats-title">Tədbirimiz Rəqəmlərdə</h2>
+        <p class="stats-subtitle">CyberBridge, Azərbaycanın kiber təhlükəsizlik ekosistemini bir araya gətirən ən böyük platformadır.</p>
+        <div class="stats-grid">
+            <!-- Məlumat 1 -->
+            <div class="stat-card">
+                <span class="stat-number">300+</span>
+                <span class="stat-label">Aktiv İştirakçı</span>
+            </div>
+            <!-- Məlumat 2 -->
+            <div class="stat-card">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Peşəkar Spiker</span>
+            </div>
+            <!-- Məlumat 3 -->
+            <div class="stat-card">
+                <span class="stat-number">3+</span>
+                <span class="stat-label">Tərəfdaş Şirkət</span>
+            </div>
+            <!-- Məlumat 4 -->
+            <div class="stat-card">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Praktiki Sessiya</span>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- About Section -->
     <section class="section fade-in" id="haqqinda">
@@ -843,7 +938,7 @@
 
             <p>Layihəmiz <strong>tamamilə onlayn formatda</strong> keçirilir və iştirakçılar öz evlərindən, rahat vaxtlarında təlimlərdə iştirak edə bilərlər. Bütün dərslər <strong>yerli və türk mütəxəssislər</strong> tərəfindən aparılır və iştirakçılara həm nəzəri, həm də praktiki bilik verilir.</p>
 
-            <p>Proqramımız hər ay yalnız <strong>20 ən yaxşı namizədi</strong> seçir və onlara 1 ay ərzində intensiv təlim verir. Bu seçici yanaşma sayəsində hər bir iştirakçıya maksimum diqqət və fərdi yanaşma təmin edilir.</p>
+            <p>Proqramımız hər ay  <strong>yüzlərlə gənci </strong> seçir və onlara 1 ay ərzində intensiv təlim verir.</p>
         </div>
 
         <div class="importance-section">
@@ -981,15 +1076,9 @@
             color: #4f46e5;
             font-weight: 500;
             margin-bottom: 12px;
+            padding: 0 1rem; /* Add some padding for long titles */
         }
-
-        .speaker-description {
-            color: #6b7280;
-            font-size: 0.875rem;
-            line-height: 1.5;
-            max-width: 280px;
-        }
-
+        
         @media (max-width: 768px) {
             .speakers-grid {
                 grid-template-columns: 1fr;
@@ -1018,120 +1107,206 @@
             }
         }
     </style>
-
+    
     <div class="speakers-header">
         <h2 class="speakers-title">Spikerlər</h2>
         <p class="speakers-subtitle">
-CyberBridge tədbiri zamanı müxtəlif sahələrdən gələn mütəxəssislər öz təcrübələrini paylaşacaq        </p>
+            CyberBridge tədbiri zamanı müxtəlif sahələrdən gələn mütəxəssislər öz təcrübələrini paylaşacaq
+        </p>
     </div>
-    
+
     <div class="speakers-grid">
         <!-- Spiker 1 -->
         <div class="speaker-card">
             <div class="speaker-image-container">
-                <img src="WhatsApp Image 2025-07-17 at 17.08.58.jpeg" 
-                     alt="Spiker 1" 
-                     class="speaker-image">
+                <img src="beyruzeliyev.jpg" onerror="this.src='https://placehold.co/192x192/E0E0E0/4A4A4A?text=BƏ'" alt="Bəhruz Əliyev" class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Bəhruz Əliyev</h3>
+            <p class="speaker-title">Azərbaycan Kibertəhlükəsizlik Təşkilatları Assosiasiyasının (AKTA) eksperti</p>
+        </div>
+
+        <!-- Spiker 2 -->
+        <div class="speaker-card">
+            <div class="speaker-image-container">
+                <img src="WhatsApp Image 2025-07-17 at 17.08.58.jpeg" onerror="this.src='https://placehold.co/192x192/D1C4E9/4A4A4A?text=MDY'" alt="Mutlu Doğuş Yıldırım" class="speaker-image">
             </div>
             <h3 class="speaker-name">Mutlu Doğuş Yıldırım</h3>
             <p class="speaker-title">Təsisçi-Seslio Robot</p>
         </div>
-<div class="speaker-card">
-            <div class="speaker-image-container">
-                <img src="sari-pp (1).png" 
-                     alt="Spiker 4" 
-                     class="speaker-image">
-            </div>
-            <h3 class="speaker-name">Hüseyin Karataş</h3>
-            <p class="speaker-title">Full stack software engineer &Campus ARC -təsisçi </p>
-            
-</div>
-<div class="speaker-card">
-            <div class="speaker-image-container">
-                <img src="517505249_599360179579359_2991540197470628544_n.jpg" 
-                     alt="Spiker 4" 
-                     class="speaker-image">
-            </div>
-            <h3 class="speaker-name">Sadiq Qasımov</h3>
-            <p class="speaker-title">Penetration Tester və Cybersecurity/Red Teaming təlimçisi (ITBrains Academy və Cyber Security Platform) </p>
-            
-</div>
-        <!-- Spiker 2 -->
-        <div class="speaker-card">
-            <div class="speaker-image-container">
-                <img src="Ruslan Xəlilzadə (1).png" 
-                     alt="Spiker 2" 
-                     class="speaker-image">
-            </div>
-            <h3 class="speaker-name">Ruslan Xəlilzadə</h3>
-            <p class="speaker-title">Penetration Tester-KlickOn.tr</p>
-        </div>
-
+        
         <!-- Spiker 3 -->
         <div class="speaker-card">
             <div class="speaker-image-container">
-                <img src="1752846943851.png" 
-                     alt="Spiker 3" 
-                     class="speaker-image">
+                <img src="sari-pp (1).png" onerror="this.src='https://placehold.co/192x192/C5CAE9/4A4A4A?text=HK'" alt="Hüseyin Karataş" class="speaker-image">
             </div>
-            <h3 class="speaker-name">Həsən Şahbazov</h3>
-            <p class="speaker-title">İnformasiya Təhlükəsizliyi üzrə mütəxəssis-AzeRobot.az</p>
+            <h3 class="speaker-name">Hüseyin Karataş</h3>
+            <p class="speaker-title">Full stack software engineer &Campus ARC -təsisçi</p>
         </div>
 
         <!-- Spiker 4 -->
         <div class="speaker-card">
             <div class="speaker-image-container">
-                <img src="baybars bilim.jpg" 
-                     alt="Spiker 4" 
-                     class="speaker-image">
+                <img src="517505249_599360179579359_2991540197470628544_n.jpg" onerror="this.src='https://placehold.co/192x192/B3E5FC/4A4A4A?text=SQ'" alt="Sadiq Qasımov" class="speaker-image">
             </div>
-            <h3 class="speaker-name">Baybars Bilim</h3>
-            <p class="speaker-title">Agentliyin direktoru-KlickOn.tr</p>
-            
-</div>
- <div class="speaker-card">
-            <div class="speaker-image-container">
-                <img src="1748593198544.jpeg" 
-                     alt="Spiker 4" 
-                     class="speaker-image">
-            </div>
-            <h3 class="speaker-name">Eric Kifalang</h3>
-            <p class="speaker-title">Togo Respublikası Prezident Aparatı nəzdində fəaliyyət göstərən Milli İdentifikasiya Agentliyində Şəbəkə və Kibertəhlükəsizlik Mühəndisi </p>
-            
-</div>
-<div class="speaker-card">
-            <div class="speaker-image-container">
-                <img src="1752854245522.jpeg" 
-                     alt="Spiker 4" 
-                     class="speaker-image">
-            </div>
-            <h3 class="speaker-name">Yılmaz Değirmenci</h3>
-            <p class="speaker-title">Bilishim Cyber Security and Artificial Intelligence şirkətinin təsisçisi və CEO-su </p>
-            
-</div>
+            <h3 class="speaker-name">Sadiq Qasımov</h3>
+            <p class="speaker-title">Penetration Tester və Cybersecurity/Red Teaming təlimçisi</p>
+        </div>
+
         <!-- Spiker 5 -->
         <div class="speaker-card">
             <div class="speaker-image-container">
-                <img src="Azerqarayev.jpg" 
-                     alt="Spiker 5" 
-                     class="speaker-image">
+                <img src="Ruslan Xəlilzadə (1).png" onerror="this.src='https://placehold.co/192x192/B2DFDB/4A4A4A?text=RX'" alt="Ruslan Xəlilzadə" class="speaker-image">
             </div>
-            <h3 class="speaker-name">Azər Qarayev</h3>
-            <p class="speaker-title">Mobil Cihazlar Forensikası üzrə Mütəxəssis-iCloud Azerbaijan</p>
+            <h3 class="speaker-name">Ruslan Xəlilzadə</h3>
+            <p class="speaker-title">Penetration Tester-KlickOn.tr</p>
         </div>
 
         <!-- Spiker 6 -->
         <div class="speaker-card">
             <div class="speaker-image-container">
-                <img src="SubhanSerifov.png" 
-                     alt="Spiker 6" 
-                     class="speaker-image">
+                <img src="1752846943851.png" onerror="this.src='https://placehold.co/192x192/C8E6C9/4A4A4A?text=HŞ'" alt="Həsən Şahbazov" class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Həsən Şahbazov</h3>
+            <p class="speaker-title">İnformasiya Təhlükəsizliyi üzrə mütəxəssis-AzeRobot.az</p>
+        </div>
+
+        <!-- Spiker 7 -->
+        <div class="speaker-card">
+            <div class="speaker-image-container">
+                <img src="baybars bilim.jpg" onerror="this.src='https://placehold.co/192x192/DCEDC8/4A4A4A?text=BB'" alt="Baybars Bilim" class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Baybars Bilim</h3>
+            <p class="speaker-title">Agentliyin direktoru-KlickOn.tr</p>
+        </div>
+
+        <!-- Spiker 8 -->
+        <div class="speaker-card">
+            <div class="speaker-image-container">
+                <img src="1748593198544.jpeg" onerror="this.src='https://placehold.co/192x192/F0F4C3/4A4A4A?text=EK'" alt="Eric Kifalang" class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Eric Kifalang</h3>
+            <p class="speaker-title">Togo Respublikası Prezident Aparatı nəzdində fəaliyyət göstərən Milli İdentifikasiya Agentliyində Şəbəkə və Kibertəhlükəsizlik Mühəndisi</p>
+        </div>
+
+        <!-- Spiker 9 -->
+        <div class="speaker-card">
+            <div class="speaker-image-container">
+                <img src="1752854245522.jpeg" onerror="this.src='https://placehold.co/192x192/FFF9C4/4A4A4A?text=YD'" alt="Yılmaz Değirmenci" class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Yılmaz Değirmenci</h3>
+            <p class="speaker-title">Bilishim Cyber Security and Artificial Intelligence şirkətinin təsisçisi və CEO-su</p>
+        </div>
+
+        <!-- Spiker 10 -->
+        <div class="speaker-card">
+            <div class="speaker-image-container">
+                <img src="azerqarayev.jpg" onerror="this.src='https://placehold.co/192x192/FFECB3/4A4A4A?text=AQ'" alt="Azər Qarayev" class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Azər Qarayev</h3>
+            <p class="speaker-title">Mobil Cihazlar Forensikası üzrə Mütəxəssis-iCloud Azerbaijan</p>
+        </div>
+
+        <!-- Spiker 11 -->
+        <div class="speaker-card">
+            <div class="speaker-image-container">
+                <img src="SubhanSerifov.png" onerror="this.src='https://placehold.co/192x192/FFE0B2/4A4A4A?text=SŞ'" alt="Sübhan Şərifov" class="speaker-image">
             </div>
             <h3 class="speaker-name">Sübhan Şərifov</h3>
             <p class="speaker-title">Təşkilatın sədri-Müstəqil İnkişaf Gənclər Təşkilatı</p>
         </div>
+        
+        <!-- Spiker 12 -->
+        <div class="speaker-card">
+             <div class="speaker-image-container">
+                <img src="nicatseferli.jpg" alt="Spiker 12" class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Nicat Nəbiyev</h3>
+            <p class="speaker-title">MilliKart LLC – Senior Security Engineer</p>
+        </div>
+        
+        <!-- Spiker 13 -->
+        <div class="speaker-card">
+             <div class="speaker-image-container">
+                <img src="alekeberalekberov.jpg" alt="Spiker 13" class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Ələkbər Ələkbərov</h3>
+            <p class="speaker-title"> Kontakt Home – İnsan Resursları Departamentinin Direktoru</p>
+        </div>
+
+        <!-- Spiker 14 -->
+        <div class="speaker-card">
+             <div class="speaker-image-container">
+                <img src="1756882421500.jpg" alt="Spiker 14" class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Fatimə Əliyeva</h3>
+            <p class="speaker-title">Rəqəmsal Səhiyyə Mərkəzi PHŞ-də Kadrlar üzrə mütəxəssis </p>
+        </div>
+
+        <!-- Spiker 15 -->
+        <div class="speaker-card">
+             <div class="speaker-image-container">
+                <img src="sefabakan.jpg" alt="Spiker 15" class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Sefa Bakan</h3>
+            <p class="speaker-title">Kiberturan Kiber Təhlükəsizlik Araşdırma, İnkişaf və Məsləhətçilik MMC – Qurucu & Direktor</p>
+        </div>
+
+        <!-- Spiker 16 -->
+        <div class="speaker-card">
+             <div class="speaker-image-container">
+                <img src="Məmməd Rəhimzadə.jpg" alt="Spiker 16" class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Məmməd Rəhimzadə</h3>
+            <p class="speaker-title"> IDDA-Lead Cyber Security Specialist</p>
+        </div>
+
+        <!-- Spiker 17 -->
+        <div class="speaker-card">
+             <div class="speaker-image-container">
+                <img src="1756818749514.png" alt="Spiker 17" class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Araz Əhmədov</h3>
+            <p class="speaker-title">İT Sistem Mühəndisi- TECHPRO DC</p>
+        </div>
+
+        <!-- Spiker 18 -->
+        <div class="speaker-card">
+             <div class="speaker-image-container">
+                <img src="ceyhunmemmedov.jpg" alt="Spiker 18" class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Ceyhun Məmmədov</h3>
+            <p class="speaker-title">Azərbaycan Respublikası Milli Məclisinin deputatı</p>
+        </div>
+
+        <!-- Spiker 19 -->
+        <div class="speaker-card">
+             <div class="speaker-image-container">
+                <img src="1756908930291.jpg" alt="Spiker 19" class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Amil Axundzadə</h3>
+            <p class="speaker-title">AzerturkBank-Senior Cybersecurity Engineer</p>
+        </div>
+
+        <!-- Spiker 20 -->
+        <div class="speaker-card">
+             <div class="speaker-image-container">
+                <img src="1756968316808.jpg" alt="Spiker 20" class="speaker-image">
+            </div>
+            <h3 class="speaker-name"> Arda Güzel</h3>
+            <p class="speaker-title"> Tugay Siber Savunma Sistemleri A.Ş. – Genel Koordinatör</p>
+        </div>
+
+        <!-- Spiker 21 -->
+        <div class="speaker-card">
+             <div class="speaker-image-container">
+                <img src="afsanamustafazade.jpg" alt="Spiker 21" class="speaker-image">
+            </div>
+            <h3 class="speaker-name">Əfsanə Mustafazadə</h3>
+            <p class="speaker-title"> Cybervia – Təsisçi & Direktor</p>
+        </div>
     </div>
 </section>
+
    <!-- Online Training Features -->
     <section class="online-section fade-in" id="niye">
         <h2 class="section-title">Onlayn Təlimin Üstünlükləri</h2>
@@ -1179,7 +1354,7 @@ CyberBridge tədbiri zamanı müxtəlif sahələrdən gələn mütəxəssislər 
         
         <div class="apply-stats">
             <div class="stat-item">
-                <span class="stat-number">20</span>
+                <span class="stat-number">300</span>
                 <span class="stat-label">Aylıq Yer Sayı</span>
             </div>
             <div class="stat-item">
@@ -1190,13 +1365,9 @@ CyberBridge tədbiri zamanı müxtəlif sahələrdən gələn mütəxəssislər 
                 <span class="stat-number">100%</span>
                 <span class="stat-label">Pulsuz Təlim</span>
             </div>
-            <div class="stat-item">
-                <span class="stat-number">24 / 7</span>
-                <span class="stat-label">Mentor Dəstəyi</span>
-            </div>
         </div>
         
-        <a href="#" class="apply-button">Müraciət Formu</a>
+        <a href="https://forms.gle/mKZPKKHJrkwoFYLD6" class="apply-button">Müraciət Formu</a>
     </section>
 
     <!-- Footer -->
